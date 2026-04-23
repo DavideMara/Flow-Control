@@ -17,7 +17,6 @@
 
 /*
  * SECTION 1: GLOBAL DATA
- * ----------------------
  */
 
 static long timeout_ns; //
@@ -30,7 +29,6 @@ static const int retransmission_timer_id = 0;
 
 /*
  * SECTION 2: CALLBACK FUNCTIONS
- * -----------------------------
  */
 
 void connection_initialization(int _windowSize, long timeout_in_ns) {
@@ -49,7 +47,7 @@ void connection_initialization(int _windowSize, long timeout_in_ns) {
 
 
 
-/* This callback is called when a packet pkt of size n is received*/
+/* Callback when a packet pkt of size n is received*/
 void receive_callback(packet_t *pkt, size_t n) {
     DEBUG_RECEPTION(2, "Packet received. Type: %d", pkt->type);
 
@@ -102,7 +100,7 @@ void receive_callback(packet_t *pkt, size_t n) {
 }
 
 
-/* Callback called when the application wants to send data to the other end*/
+/* Callback when the application wants to send data to the other end*/
 void send_callback() {
     DEBUG_SEND(2, "send_callback called.");
     // Check if we are waiting for an ACK
@@ -137,7 +135,7 @@ void send_callback() {
 }
 
 /*
- * This function gets called when timer with index "timerNumber" expires.
+ * Function timer with index "timerNumber" expires.
  */
 void timer_callback(int timerNumber) {
     if(timerNumber == retransmission_timer_id) {
