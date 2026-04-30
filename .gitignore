@@ -3,12 +3,12 @@ flowcontrol
 *.o
 *.out
 
-# Debug symbols and IDEs
+# IDE's garbage
 .vscode/
 .idea/
 *.swp
 *.swo
 
 # Temporary and log files
-*.log
-.gemini/
+*.log 
+*.tmp
